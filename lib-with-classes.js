@@ -9,17 +9,14 @@ class Book {
     }
 
     borrowBook1() {
-        for (const isAvailable in Book) {
-            Book[isAvailable] = false;
-            console.log(isAvailable);
-        }
+        this.isAvailable = false;
+
         displayOptions();
     }
 
     returnBook1() {
-        for (const isAvailable in book) {
-            Book[isAvailable] = true;
-        }
+        this.isAvailable = true;
+
         displayOptions();
     }
 }
@@ -52,25 +49,21 @@ class Library {
     }
 
     borrowBook(title) {
-        for (let i=0; i<Library.length; i++){
-            if (this.books[i].title === title) {
+        for (let i=0; i<this.books.length; i++){
+            if (this.books[i].title === title && this.books[i].isAvailable) {
                 this.books[i].borrowBook1();
             }
         }
         console.log(`sorry the book ${title} is unavailable`);
-    
-        displayOptions();
     }
 
     returnBook(title) {
-        for (let i=0; i<Library.length; i++){
-            if (Library[i].title == title) {
-                Library[i].returnBook1();
+        for (let i=0; i<this.books.length; i++){
+            if (this.books[i].title == title && !this.books[i].isAvailable) {
+                this.books[i].returnBook1();
             }
         }
         console.log(`sorry ${title} is not in our system`);
-    
-        displayOptions();
     }
 }
 lib = new Library();
