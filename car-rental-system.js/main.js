@@ -1,10 +1,10 @@
-import { Car } from './car';
-import { calculateRentalPrice } from './priceCalculator';
-import { rentCar, returnCar } from './rental';
 
-car1 = new Car();
-car2 = new Car();
+import { Car } from './car.js';
+import { calculateRentalPrice } from './priceCalculator.js';
+import { rentCar, returnCar } from './rental.js';
 
-console.log(rentCar(car1));
-console.log(calculateRentalPrice(3,100));
-console.log(returnCar(car1));
+let car = new Car(12, 12, 2008, 1000, true);
+
+console.log(rentCar(car));
+console.log(calculateRentalPrice(3, 1000));
+console.log(returnCar(car));

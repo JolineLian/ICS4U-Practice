@@ -1,13 +1,13 @@
 export function rentCar(car) {
-    if (isAvailable) {
-        isAvailable = false;
+    if (car.isAvailable) {
+        car.isAvailable = false;
         console.log("The car has been rented");
     }
 }
 
 export function returnCar(car) {
-    if (!isAvailable) {
-        isAvailable = true;
+    if (!car.isAvailable) {
+        car.isAvailable = true;
         console.log("The car has been returned");
     }
 }
